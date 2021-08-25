@@ -1,9 +1,9 @@
 puts "🌱 Seeding spices..."
 
 #User.destroy_all
-Work.destroy_all
+#Work.destroy_all
 
-#u = User.create(email: "b@test.com", password: "hash")
+u = User.find_or_create_by(email: "b@test.com", password: "hash")
 #Seed your database here
 
 
@@ -11,7 +11,7 @@ def range (min, max)
     rand * (max-min) + min
 end
 
-5.times do |i|
+15.times do |i|
     hash = {user: u, 
         z_start: rand(-5..0), z_end: rand(1..5), 
         x_start: rand(-5..0), x_end: rand(1..5), 

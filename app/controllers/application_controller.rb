@@ -10,4 +10,14 @@ class ApplicationController < Sinatra::Base
     Work.all.to_json
   end
 
+  delete "/works/:id" do
+    work = Work.find(params[:id])
+    work.destroy
+    work.to_json
+  end
+
+  post "/works" do
+    Work.create(params).to_json
+  end
+
 end
