@@ -20,4 +20,9 @@ class ApplicationController < Sinatra::Base
     Work.create(params).to_json
   end
 
+  post "/users" do
+    user = User.find_or_create_by(params)
+    user.to_json
+  end
+
 end
